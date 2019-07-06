@@ -1,0 +1,30 @@
+
+/* CSS Document */
+/* FONT STYLE */
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+/* body background styling*/
+.aboutBG{
+	background-image:url("../images/au.jpg");
+	background-size: cover;
+	margin-top:0px;;
+	height: 100%;
+	
+    background-repeat: no-repeat;
+	
+}
+
+div{
+	 
+	text-align: center;
+	margin-top: 200px;
+	margin-left: 700px;
+	margin-right: 80px;
+	
+	font-size: 30px;
+	color: black;
+	font-weight: 700;
+
+	font-family: 'Dosis', sans-serif;
+	
+}

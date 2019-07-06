@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><link rel="shortcut icon" href="http://www.documentarytube.com/favicon.ico?v=1.1" /><meta name="csrf-param" content="_csrf"><meta name="csrf-token" content="dl93cmJwZlcVFkIYTyQsNTQMQRYVSCM/PhAHRxgnAwAcLB4WMF1LOw=="><title>Top 7 Books that Changed the World | DocumentaryTube</title><meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta property="og:description" content="There are thousands of books written from the beginning of time till today. But which of these books have had the biggest effect on human history?">
+<meta property="og:title" content="Top 7 Books that Changed the World">
+<meta property="og:image" content="https://d1nz104zbf64va.cloudfront.net/dt/a/o/top-7-books-that-changed-the-world.jpg">
+<meta property="og:url" content="http://www.documentarytube.com/articles/top-7-books-that-changed-the-world">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DocumentaryTube">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="@pokervip">
+<meta property="twitter:creator" content="@pokervip">
+<meta name="twitter:domain" content="documentarytube.com">
+<meta name="twitter:url" content="http://www.documentarytube.com/articles/top-7-books-that-changed-the-world?ref=tw">
+<meta name="description" content="There are thousands of books written from the beginning of time till today. But which of these books have had the biggest effect on human history?">
+<meta property="og:locale" content="en-US">
+<meta property="og:locale:alternate" content="en-US">
+<meta property="article:modified_time" content="2018-02-26 08:36:59">
+<meta property="article:published_time" content="2018-02-26 08:36:44">
+<meta property="twitter:title" content="Top 7 Books that Changed the World">
+<meta property="twitter:description" content="There are thousands of books written from the beginning of time till today. But which of these books have had the biggest effect on human history?">
+<meta property="twitter:image:src" content="https://d1nz104zbf64va.cloudfront.net/dt/a/o/top-7-books-that-changed-the-world.jpg">
+<link href="http://www.documentarytube.com/articles/top-7-books-that-changed-the-world" rel="canonical">
+<link href="https://d1nz104zbf64va.cloudfront.net/dt/assets/all-cb7e822426.min.css" rel="stylesheet"></head><body><div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=131936270333958";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><div role="navigation" class="navbar navbar-default navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="http://www.documentarytube.com/" class="navbar-brand"><img class="auto" width="147" src="https://d1nz104zbf64va.cloudfront.net/dt/assets/all-328ed81066.svg#logo" alt="DocumentaryTube"></a></div><div class="navbar-search allow-click hide-mobile hide-tablet"><div class="searchform-div"><form method="get" class="searchform cf" action="/search/"><div class="search-text-div rel fl"><span class="search-loader"></span><span class="icon fa fa-search mr5"></span><input id="search-box-input" type="text" name="q" autocomplete="off" class="search-text search-text-full" value="" placeholder="Search..."/><span class="search-close search-close-full" onclick="jQuery('#search-box-input').val('');jQuery('.search-close').fadeOut();"><span class="icon fa fa-times"></span></span></div></form></div></div><div class="navbar-collapse collapse navbar-right"><ul id="main-nav" class="nav navbar-nav"><li><a href="http://www.documentarytube.com/">Home</a></li><li><a href="http://www.documentarytube.com/videos">Discover</a></li><li><a href="http://www.documentarytube.com/top">Top 100</a></li><li><a href="http://www.documentarytube.com/articles">Articles</a></li><li><a href="http://www.documentarytube.com/suggest">Suggest</a></li><li class="ml20 login-btn"><a href="/login" class="btn btn-blue shadow">Login</a></li></ul><div class="navbar-search allow-click show-mobile show-tablet"><div class="searchform-div"><form method="get" class="searchform cf" action="http://www.documentarytube.com/search/"><div class="search-text-div rel fl"><span class="search-loader"></span><span class="icon fa fa-search mr5"></span><input id="search-box-input" type="text" name="q" autocomplete="off" class="search-text" value="" placeholder="Search..."/><input type="submit" class="search-submit btn btn-grey" value="Search"/></div></form></div></div></div></div></div><div class="head-spacer"></div><div class="container"><div class="row"><div class="col-lg-12"><ul class="breadcrumb"><li><a href="http://www.documentarytube.com/"><span>DocumentaryTube</span></span></a></li><li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="http://www.documentarytube.com/articles"><span itemprop="title">Articles</span></a></li><li><span class="padder t-up"><span>Top 7 Books that Changed the World</span></span></li></ul></div></div></div><div class="container mt35 mb35"><div class="row"><div class="col-lg-8" itemscope itemtype="http://schema.org/NewsArticle"><div class="row"><div class="col-lg-12 article-block"><h1 class="article-title" itemprop="headline">Top 7 Books that Changed the World</h1><div class="row mb25"><div class="col-sm-6"><div class="media"><div class="media-left"><a href="http://www.documentarytube.com/writer/aleksandar-mishkov" title="Aleksandar Mishkov"><img src="https://d1nz104zbf64va.cloudfront.net/dt/w/o/" alt="Avatar" width="40" height="40" class="media-object"></a></div><div class="media-body"><h4 class="media-heading"><a href="http://www.documentarytube.com/writer/aleksandar-mishkov" rel="author" title="Aleksandar Mishkov">Aleksandar Mishkov</a><span class="timestamp">/ published 5 months ago</span></h4></div></div></div><div class="col-sm-5 col-sm-offset-1"><ul class="icon-list"><li><span class="fa fa-eye"></span>6,980</li><li class="category tar"><a href="/social">Social</a></li><li class="category tar"><a href="/philosophy">Philosophy</a></li></ul></div></div><div class="article-image"><img src="https://d1nz104zbf64va.cloudfront.net/dt/a/o/top-7-books-that-changed-the-world.jpg" itemprop="image" alt="Top 7 Books that Changed the World"></div><meta itemprop="datePublished" content="2018-02-26T08:36:59+00:00"/><h2 itemprop="description">There are thousands of books written from the beginning of time till today. But which of these books have had the biggest effect on human history?</h2><span itemprop="articleBody"><p class="MsoNoSpacing"><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG></o:AllowPNG></o:OfficeDocumentSettings></xml><![endif]--><!--[if gte mso 9]><xml><w:WordDocument><w:View>Normal</w:View><w:Zoom>0</w:Zoom><w:TrackMoves></w:TrackMoves><w:TrackFormatting></w:TrackFormatting><w:PunctuationKerning></w:PunctuationKerning><w:ValidateAgainstSchemas></w:ValidateAgainstSchemas><w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid><w:IgnoreMixedContent>false</w:IgnoreMixedContent><w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText><w:DoNotPromoteQF></w:DoNotPromoteQF><w:LidThemeOther>EN-US</w:LidThemeOther><w:LidThemeAsian>X-NONE</w:LidThemeAsian><w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript><w:Compatibility><w:BreakWrappedTables></w:BreakWrappedTables><w:SnapToGridInCell></w:SnapToGridInCell><w:WrapTextWithPunct></w:WrapTextWithPunct><w:UseAsianBreakRules></w:UseAsianBreakRules><w:DontGrowAutofit></w:DontGrowAutofit><w:SplitPgBreakAndParaMark></w:SplitPgBreakAndParaMark><w:EnableOpenTypeKerning></w:EnableOpenTypeKerning><w:DontFlipMirrorIndents></w:DontFlipMirrorIndents><w:OverrideTableStyleHps></w:OverrideTableStyleHps></w:Compatibility><m:mathPr><m:mathFont m:val="Cambria Math"></m:mathFont><m:brkBin m:val="before"></m:brkBin><m:brkBinSub m:val="&#45;-"></m:brkBinSub><m:smallFrac m:val="off"></m:smallFrac><m:dispDef></m:dispDef><m:lMargin m:val="0"></m:lMargin><m:rMargin m:val="0"></m:rMargin><m:defJc m:val="centerGroup"></m:defJc><m:wrapIndent m:val="1440"></m:wrapIndent><m:intLim m:val="subSup"></m:intLim><m:naryLim m:val="undOvr"></m:naryLim></m:mathPr></w:WordDocument></xml><![endif]--><!--[if gte mso 9]><xml><w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267"><w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"></w:LsdException><w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"></w:LsdException><w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"></w:LsdException><w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"></w:LsdException><w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"></w:LsdException><w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"></w:LsdException><w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"></w:LsdException><w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"></w:LsdException><w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"></w:LsdException><w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 1"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 2"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 3"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 4"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 5"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 6"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 7"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 8"></w:LsdException><w:LsdException Locked="false" Priority="39" Name="toc 9"></w:LsdException><w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"></w:LsdException><w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"></w:LsdException><w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"></w:LsdException><w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"></w:LsdException><w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"></w:LsdException><w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"></w:LsdException><w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"></w:LsdException><w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"></w:LsdException><w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"></w:LsdException><w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"></w:LsdException><w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"></w:LsdException><w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"></w:LsdException><w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"></w:LsdException><w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"></w:LsdException><w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"></w:LsdException><w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"></w:LsdException><w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"></w:LsdException><w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"></w:LsdException><w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"></w:LsdException><w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"></w:LsdException><w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"></w:LsdException><w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"></w:LsdException><w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"></w:LsdException><w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"></w:LsdException><w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"></w:LsdException><w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"></w:LsdException><w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"></w:LsdException><w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"></w:LsdException><w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"></w:LsdException><w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"></w:LsdException><w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"></w:LsdException><w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"></w:LsdException><w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"></w:LsdException><w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"></w:LsdException><w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"></w:LsdException><w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"></w:LsdException><w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"></w:LsdException><w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"></w:LsdException><w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"></w:LsdException><w:LsdException Locked="false" Priority="37" Name="Bibliography"></w:LsdException><w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"></w:LsdException></w:LatentStyles></xml><![endif]--><!--[if gte mso 10]><style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+</style><![endif]-->Some authors write books that will stand the test of
+time. To be fair, probably they didn’t have that in mind when they wrote the
+books. But it is a fact some books have not only stood the test of an age, but
+for all time.</p><p class="MsoNoSpacing">
+
+There are thousands of books written from the beginning of
+time till today. But which of these books have had the biggest effect on human
+history? Some of these books fall into the fiction genre, others into science
+and religion. But whatever the genre, they have left their mark on the world
+and stood the test of time.</p><h3 class="MsoNoSpacing">
+
+1984 By George Orwell</h3><p class="MsoNoSpacing">
+
+This is Orwell’s classic work that is being referred till
+today. The author imagines the not-so-distant future as a nightmarish place
+controlled by the government. This is the book many journalists use when
+describing a dictatorship regime. In Orwell’s vision, there is no freedom and
+rampant censorship rules. Authors have tried to replicate his work, or even
+improve his vision. For example, Fahrenheit 451 is one of the books that builds
+on the momentum of Orwell’s work. But no other book paints as great picture as 1984.
+Some of the terms that the book gave birth to, are still used today. Those
+include “Big Brother”, “2+2=5”, “doublethink”, “thoughtcrime”, and so on.</p><blockquote><p class="MsoNoSpacing">
+
+“Who controls the past controls the future. Who controls
+the present, controls the past”</p></blockquote><h3 class="MsoNoSpacing">
+
+Comedies, Histories, and Tragedies by William Shakespeare</h3><p class="MsoNoSpacing">
+
+Imagine the world of literature and the world of stage
+theater without Hamlet, Othello, Lady Macbeth, or any other character Shakespeare
+gave birth to. Half of the plays the greatest writer of all time wrote survived
+only because of this book. </p><p class="MsoNoSpacing">
+
+No other book has ever done more with the resources of
+human language. The memorable phrases, the coinages and combinations, the
+wit-combats, meditations, and the soaring poetry found in these plays is just
+unbelievable.</p><blockquote><p class="MsoNoSpacing">
+
+“There is nothing either good or bad, but thinking makes
+it so”, Hamlet.</p></blockquote><h3 class="MsoNoSpacing">
+
+The Communist Manifesto by Karl Marx and Friedrich Engels</h3><p class="MsoNoSpacing">
+
+Without this book, communism might not have thrived as it
+did. Fun fact: the Manifest is not about the proletariat. The whole first
+section is a eulogy to capitalism. But the Manifesto has played a revolutionary
+role in building the hype and dream of communism, and changing the economy. The
+Manifesto hit the right time, it was published just before the 1948 revolution
+in France, and shipped via Paris to Germany. From that point on, the
+proletariat had the political maturity to wield power and revolutions became a
+dirty business for communists. </p><blockquote><p class="MsoNoSpacing">
+
+“Let the ruling classes tremble at a Communist
+revolution. The proletarians have nothing to lose but their chains. They have a
+world to win. Workingmen of all countries unite”</p></blockquote><h3 class="MsoNoSpacing">
+
+The Analects of Confucius by Confucius</h3><p class="MsoNoSpacing">
+
+This book is a collection of sayings and ideas from the
+greatest Chinese philosopher. It is worth noting that the book has been written
+down by his followers. It is considered the most important book in
+Confucianism. He believed in family loyalty, respect of one’s elders, ancestor
+worship, and so on. It is one of the most widely read and studied books in China.</p><blockquote><p class="MsoNoSpacing">
+
+“By three methods we may learn wisdom: First, by
+reflection, which is noblest; Second, by imitation, which is easiest; and third
+by experience, which is the bitterest.”</p></blockquote><h3 class="MsoNoSpacing">
+
+King James Bible</h3><p class="MsoNoSpacing">
+
+This was not the first English translation of the
+Christian Bible. However, it is the most well-known and most widely read
+version. It is also the most printed book in history. Considered a stunning
+achievement in literature, this translation was compiled from different books
+in various languages to create the best English Bible possible. It was done
+under the order of King James I. As many as 47 scholars participated in the
+translation. The project started in 1604, and the first version was published
+in 1611.</p><blockquote><p class="MsoNoSpacing">
+
+“Yea, though I walk through the valley of the shadow of death,
+I will fear no evil: for thou art with me; thy rod and thy staff they comfort
+me”, Psalm 23:4</p></blockquote><h3 class="MsoNoSpacing">
+
+The Interpretation of Dreams by Sigmund Freud</h3><p class="MsoNoSpacing">
+
+Writers have always been alert to the darker sides of the
+psyche. But it was Freud who showed how they are encrypted. According to Freud
+and his philosophy, sexuality and violence are the central place in our mental
+lives. </p><p class="MsoNoSpacing">
+
+The downside of this book is that it set readers on a
+fruitless quest for hidden symbolism. The danger of the book was quickly
+apparent to Freud. All of his later work on dreams was an effort to correct
+this. But the search for hidden meaning was popular among readers, even though
+it was ultimately unhelpful. And as Freud wrote in 1899, there is a navel to
+the dream.</p><blockquote><p class="MsoNoSpacing">
+
+“The dream is the liberation of the spirit from the
+pressure of external nature, a detachment of the soul from the fetters of
+matter.”</p></blockquote><h3 class="MsoNoSpacing">
+
+Anne Frank: The Diary of a Young Girl by Anne Frank</h3><p class="MsoNoSpacing">
+
+It is not that we didn’t know the trauma and horrors of
+World War II. But it was Anne Fran, a young teenager that showed us. This is
+the most widely read and important book that came out of the Holocaust. Anne
+Frank, a teenager during World War II, kept a detailed diary while she was
+hiding with her family for two years during Nazi’s occupation of the
+Netherlands. </p><p class="MsoNoSpacing">
+
+Anne died in a concentration camp in 1944. She was 15
+years old at the time. Her father, who was the only surviving member of the
+family, was given the diary. He published it in 1947.</p><blockquote><p class="MsoNoSpacing">
+
+“It's really a wonder that I haven't dropped all my
+ideals, because they seem so absurd and impossible to carry out. Yet I keep
+them, because in spite of everything, I still believe that people are really
+good at heart.”</p></blockquote></span><div class="share-box-big"><div id="share-widget" data-url="http://www.documentarytube.com/articles/top-7-books-that-changed-the-world" data-text="Watch Full-Length Documentaries Online for Free."></div></div></div></div><div class="row"><div class="col-lg-12"><h3 class="upper mb25 mt0">From Around the Web</h3><div class="content-click-box" id="contentclick15670"></div><script type="text/javascript">
+                        (function() {
+                            var data =
+                            {
+                                pub_id: "6403",w_id: "15670",pw: "09296e1feee535", cbust: (new Date()).getTime()
+                            };
+                            if (typeof widgetCheck15670 === 'undefined')   {
+                                var u="";
+                                for(var key in data){u+=key+"="+data[key]+"&"}
+                                    u=u.substring(0,u.length-1);        
+                                var a = document.createElement("script");
+                                a.type= 'text/javascript';
+                                a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
+                                a.async = true;     
+                                document.getElementById("contentclick15670").appendChild(a);
+                                window.widgetCheck15670 = "set";
+                            }
+                        })();       
+                    </script><h3 class="upper mb25">Related Videos</h3></div></div><div class="spacing"><div class="row"><div class="col-sm-6"><div class="panel panel-default panel-feature-box" data-id="5b6c18ffd39043e8648b457c"><div class="panel-body"><div class="image-box"><a href="http://www.documentarytube.com/videos/amazing-recycled-bar-built-from-trash" class="image-inner"><img class="category-image" src="https://d1nz104zbf64va.cloudfront.net/dt/c/0/54807683a525116d608b4719.jpg" alt="Social"></a><div class="image-thumb"><a href="http://www.documentarytube.com/videos/amazing-recycled-bar-built-from-trash" class="image-thumb-inner"><img src="https://d1nz104zbf64va.cloudfront.net/dt/v/0/v1-amazing-recycled-bar-built-from-trash.jpg" alt="pub made of recycled materials"></a></div><div class="provider-icon box youtube"><img width="30" height="30" src="https://d1nz104zbf64va.cloudfront.net/dt/assets/all-328ed81066.svg#youtube" alt="youtube icon"/><div class="timestamp">02:30</div></div><div class="category-title"><a href="/lifestyle">Lifestyle</a>
+						+1				</div></div><div class="new-tag"><span></span>New</div><div class="box-title"><a href="http://www.documentarytube.com/videos/amazing-recycled-bar-built-from-trash">Japanese pub made out of 100% recycled materials</a></div><div class="box-desc"><p>
+
+In the past few years, one of the key aspects of
+evolution is put on recycling, using sustainable materials, and re-using
+things.A pub in Japan has taken all of this to a who...</p></div><ul class="icon-list"><li class="views"><span class="fa fa-eye"></span>26</li><li class="ago"><span class="fa fa-history"></span>15 hours ago</li><li class="star">Not Rated<span class="fa fa-star"></span><span class="count"></span></li></ul></div></div></div><div class="col-sm-6"><div class="panel panel-default panel-feature-box" data-id="5b574e4cd390436b398b4664"><div class="panel-body"><div class="image-box"><a href="http://www.documentarytube.com/videos/love-and-sex-in-china-chinese-marriage-documentary-real-stories" class="image-inner"><img class="category-image" src="https://d1nz104zbf64va.cloudfront.net/dt/c/0/54807683a525116d608b4719.jpg" alt="Social"></a><div class="image-thumb"><a href="http://www.documentarytube.com/videos/love-and-sex-in-china-chinese-marriage-documentary-real-stories" class="image-thumb-inner"><img src="https://d1nz104zbf64va.cloudfront.net/dt/v/0/v1-love-and-sex-in-china-chinese-marriage-documentary-real-stories.jpg" alt="marriage in china"></a></div><div class="provider-icon box youtube"><img width="30" height="30" src="https://d1nz104zbf64va.cloudfront.net/dt/assets/all-328ed81066.svg#youtube" alt="youtube icon"/><div class="timestamp">58:06</div></div><div class="category-title"><a href="/lifestyle">Lifestyle</a>
+						+1				</div></div><div class="box-title"><a href="http://www.documentarytube.com/videos/love-and-sex-in-china-chinese-marriage-documentary-real-stories">Love And Sex In China - Chinese Marriage Documentary</a></div><div class="box-desc"><p>
+
+Traditional Chinese marriage is a ceremonial ritual
+within Chinese societies that involve a union between spouses, sometimes
+established by pre-arrangement between families. ...</p></div><ul class="icon-list"><li class="views"><span class="fa fa-eye"></span>326</li><li class="ago"><span class="fa fa-history"></span>2 weeks ago</li><li class="star">Not Rated<span class="fa fa-star"></span><span class="count"></span></li></ul></div></div></div><div class="clearfix"></div><div class="col-sm-6"><div class="panel panel-default panel-feature-box" data-id="5b54906ed39043880b8b45c3"><div class="panel-body"><div class="image-box"><a href="http://www.documentarytube.com/videos/top-secret-things-about-ice-cream-you-didn-t-know-full-documentary" class="image-inner"><img class="category-image" src="https://d1nz104zbf64va.cloudfront.net/dt/c/0/54807683a525116d608b4719.jpg" alt="Social"></a><div class="image-thumb"><a href="http://www.documentarytube.com/videos/top-secret-things-about-ice-cream-you-didn-t-know-full-documentary" class="image-thumb-inner"><img src="https://d1nz104zbf64va.cloudfront.net/dt/v/0/v1-top-secret-things-about-ice-cream-you-didn-t-know-full-documentary.jpg" alt="ice cream documentary"></a></div><div class="provider-icon box youtube"><img width="30" height="30" src="https://d1nz104zbf64va.cloudfront.net/dt/assets/all-328ed81066.svg#youtube" alt="youtube icon"/><div class="timestamp">57:38</div></div><div class="category-title"><a href="/food-drink">Food/Drink</a>
+						+1				</div></div><div class="box-title"><a href="http://www.documentarytube.com/videos/top-secret-things-about-ice-cream-you-didn-t-know-full-documentary">Top Secret Things about Ice Cream You Didn&#039;t Know</a></div><div class="box-desc"><p>
+
+How much do you know about America’s most favorite dessert?
+Ice cream is one of the most famous desserts, something we all love do lick on
+a daily basis?
+
+And now, during...</p></div><ul class="icon-list"><li class="views"><span class="fa fa-eye"></span>243</li><li class="ago"><span class="fa fa-history"></span>2 weeks ago</li><li class="star">Not Rated<span class="fa fa-star"></span><span class="count"></span></li></ul></div></div></div><div class="col-sm-6"><div class="panel panel-default panel-feature-box" data-id="5b49a09fd3904333608b45d7"><div class="panel-body"><div class="image-box"><a href="http://www.documentarytube.com/videos/marvel-comics-spider-man-explained" class="image-inner"><img class="category-image" src="https://d1nz104zbf64va.cloudfront.net/dt/c/0/54807683a525116d608b4719.jpg" alt="Social"></a><div class="image-thumb"><a href="http://www.documentarytube.com/videos/marvel-comics-spider-man-explained" class="image-thumb-inner"><img src="https://d1nz104zbf64va.cloudfront.net/dt/v/0/v1-marvel-comics-spider-man-explained.jpg" alt="spiderman history"></a></div><div class="provider-icon box youtube"><img width="30" height="30" src="https://d1nz104zbf64va.cloudfront.net/dt/assets/all-328ed81066.svg#youtube" alt="youtube icon"/><div class="timestamp">07:45</div></div><div class="category-title"><a href="/social">Social</a></div></div><div class="box-title"><a href="http://www.documentarytube.com/videos/marvel-comics-spider-man-explained">Marvel Comics: Spider-Man Explained</a></div><div class="box-desc"><p>
+
+Spider Man is one of the most popular fictional
+superheroes in the world. In the world of Marvel, Spiderman is probably the
+most popular hero.
+
+How Spiderman came to the bi...</p></div><ul class="icon-list"><li class="views"><span class="fa fa-eye"></span>189</li><li class="ago"><span class="fa fa-history"></span>3 weeks ago</li><li class="star">Not Rated<span class="fa fa-star"></span><span class="count"></span></li></ul></div></div></div><div class="clearfix"></div></div></div><div class="fb-comments" data-href="http://www.documentarytube.com/articles/top-7-books-that-changed-the-world" data-width="100%" data-numposts="5"></div></div><!-- SIDEBAR--><div class="col-lg-4"><div class="row"><div class="col-xs-4"><div id="social-facebook-77185" data-url="http://www.documentarytube.com/articles/top-7-books-that-changed-the-world"></div></div><div class="col-xs-4"><div id="social-google-77185" data-url="http://www.documentarytube.com/articles/top-7-books-that-changed-the-world"></div></div><div class="col-xs-4"><div id="social-twitter-77185" data-url="http://www.documentarytube.com/articles/top-7-books-that-changed-the-world"></div></div></div><div class="mb30"></div><div class="panel panel-default panel-feature-box"><div class="panel-title alt">
+					Related Articles			</div><div class="panel-body alt article"><div class="image-box"><a href="http://www.documentarytube.com/articles/modlareuth-a-city-in-germany-still-divided-between-east-and-west" class="image-inner"><img src="https://d1nz104zbf64va.cloudfront.net/dt/a/0/modlareuth-a-city-in-germany-still-divided-between-east-and-west.jpg" alt="Mödlareuth – A City in Germany Still Divided Between East and West"></a><div class="category-title"><a href="/lifestyle">Lifestyle</a></div></div><div class="box-title"><a href="http://www.documentarytube.com/articles/modlareuth-a-city-in-germany-still-divided-between-east-and-west">Mödlareuth – A City in Germany Still Divided Between East and West</a></div><div class="box-desc">Some 30 years after the tearing down of the Berlin Wall, the city with only 15 houses, has two majors, two postal codes,...</div><ul class="icon-list"><li class="views"><span class="fa fa-eye"></span>370</li><li class="ago"><span class="fa fa-history"></span>1 month ago</li></ul><div class="box-title"><a href="http://www.documentarytube.com/articles/svalbard-global-seed-vault-our-doomsday-scenario-vault">Svalbard Global Seed Vault – Our Doomsday Scenario Vault</a></div><div class="box-desc">The Nordic Gene Bank stores backup Nordic plants since 1984. They do it via frozen seeds in an abandoned coal mine. In 2...</div><ul class="icon-list"><li class="views"><span class="fa fa-eye"></span>407</li><li class="ago"><span class="fa fa-history"></span>3 months ago</li></ul><div class="box-title"><a href="http://www.documentarytube.com/articles/the-tradition-and-rituals-of-the-inuit-people">The Tradition and Rituals of the Inuit People</a></div><div class="box-desc">The Inuit people have a long tradition of oral literature and storytelling. Before they had a writing system, they passe...</div><ul class="icon-list"><li class="views"><span class="fa fa-eye"></span>3,034</li><li class="ago"><span class="fa fa-history"></span>6 months ago</li></ul><div class="box-title"><a href="http://www.documentarytube.com/articles/lord-murugan-statue-the-tall-hindu-statue-rising-over-bantu-caves">Lord Murugan Statue – The Tall Hindu Statue Rising over Bantu Caves</a></div><div class="box-desc"> The statute, which is 42.7 meters high (140ft), is the tallest statue in Malaysia, and second Hindu deity in the world,...</div><ul class="icon-list"><li class="views"><span class="fa fa-eye"></span>1,722</li><li class="ago"><span class="fa fa-history"></span>7 months ago</li></ul></div></div><div class="widget side-item mb15 test"><div class="twitter-box"><a class="twitter-timeline" href="https://twitter.com/DocumentaryTube" data-widget-id="539750042643734528"></a></div></div></div></div></div><div class="feature-ticker"><div class="container"><div class="row"><div class="col-lg-12 rel"><div id="newsData"></div><a href="#" class="fa fa-paragraph"></a><a id="prevDiv" href="#" class="fa fa-angle-left" onclick="return false;"></a><a id="nextDiv" href="#" class="fa fa-angle-right" onclick="return false;"></a><ul id="newsList"><li><a href="http://www.documentarytube.com/articles/the-future-is-now-german-start-up-tests-solar-powered-vehicle" style="color:#fff;"> Sion is a prototype vehicle made by the German company Sono Motors. It is set to be released in 2019. The vehicle has solar cells...</a></li><li><a href="http://www.documentarytube.com/articles/fecal-transplant-is-real-and-five-other-feces-facts-that-will-surprise-you" style="color:#fff;">Some health experts even say they can perform a colonoscopy and guess the sex of the patient without knowing it beforehand</a></li><li><a href="http://www.documentarytube.com/articles/forget-the-octagon-scientists-discover-a-new-shape-called-scutoid" style="color:#fff;">The discovery can help us understand how organs acquire such complex, yet in the same time, stable forms. It is critical for futur...</a></li></ul></div></div></div></div><div class="feature-footer"><div class="container"><div class="row"><div class="col-md-4"><h4 class="pad-out">About</h4><p>We're committed to providing the best documentaries from around the World.  With hundreds of free documentaries published and categorised every month, there's something for every taste. </p><div class="spacing"></div><div class="row"><div class="col-xs-4"><div id="social-facebook-58041" data-url="http://www.documentarytube.com"></div></div><div class="col-xs-4"><div id="social-google-58041" data-url="http://www.documentarytube.com"></div></div><div class="col-xs-4"><div id="social-twitter-58041" data-url="http://www.documentarytube.com"></div></div></div></div><div class="col-sm-2 col-md-offset-1"><h4 class="pad-out">Useful Links</h4><div class="dynamicselect-select-block form-group well well-sm show-mobile"><select class="form-control mobile-footer-nav"><option value="/videos" selected="">Discover</option><option value="/top">Top 100</option><option value="/articles">Articles</option><option value="/suggest">Suggest Documentary</option><option value="/tag">Video Tags Browser</option><option value="/login">Login</option><option value="/register">Register</option><option value="/about">About Us</option><option value="/faq">FAQs</option><option value="/contact">Contact Us</option></select></div><ul class="hide-mobile"><li><a href="/videos">Discover</a></li><li><a href="/top">Top 100</a></li><li><a href="/articles">Articles</a></li><li><a href="/tag">Video Tags Browser</a></li><li><a href="/suggest" class="btn btn-blue btn-suggest">Suggest Documentary</a></li></ul></div><div class="col-sm-2 hide-mobile"><h4>Social</h4><ul><li><a href="https://www.facebook.com/DocumentaryTube" target="_blank">Facebook</a></li><li><a href="https://twitter.com/documentarytube" target="_blank">Twitter</a></li><li><a href="https://plus.google.com/+Documentarytubecom/about" target="_blank">Google+</a></li><li><a href="/rss" target="_blank">RSS Feed</a></li></ul></div><div class="col-sm-3 hide-mobile"><h4>More</h4><ul><li><a href="/about">About Us</a></li><li><a href="/faq">FAQs</a></li><li><a href="/contact">Contact Us</a></li></ul></div></div></div></div><div class="feature-footer-sub"><div class="container"><div class="row"><div class="col-lg-6"><a href="/" class="logo-180vita"><img src="https://d1nz104zbf64va.cloudfront.net/dt/assets/all-328ed81066.svg#logo" alt="180Vita"></a><p class="copyrights">&copy; 180Vita Ltd.<span class="f-spacer">·</span>All rights reserved</p></div><div class="col-lg-6"><p class="copyrights tar"><a href="/privacy">Privacy Policy</a><span class="f-spacer">·</span><a href="/terms">Terms of Service</a><span class="f-spacer">·</span><a href="/dmca">DMCA</a></p></div></div></div></div><script src="https://d1nz104zbf64va.cloudfront.net/dt/assets/all-03441bd7fe.min.js"></script>
+<script type="text/javascript">
+		$('#share-widget').sharrre({
+		  share: {
+		  	facebook: true,
+		    googlePlus: true,
+		    twitter: true
+		  },
+		  urlCurl: '/sharrre.php',
+		  enableHover: false,
+		  enableTracking: false,
+		  template: '<div class="share-large">{total}<div class="share-small">shares</div></div><div class="mobile-clear"></div><a href="#" class="btn btn-facebook shadow"><span class="fa fa-facebook"></span></a><a href="#" class="btn btn-google shadow"><span class="fa fa-google"></span></a><a href="#" class="btn btn-twitter shadow"><span class="fa fa-twitter"></span></a>',
+		  render: function(api, options) {
+			  $(api.element).on('click', '.btn-twitter', function() {
+			    api.openPopup('twitter');
+			  });
+			  $(api.element).on('click', '.btn-facebook', function() {
+			    api.openPopup('facebook');
+			  });
+			  $(api.element).on('click', '.btn-google', function() {
+			    api.openPopup('googlePlus');
+			  });
+		  },
+		});
+	
+
+		$('#social-facebook-77185').sharrre({
+		  share: {
+			facebook: true,
+		  },
+		  template: '<div class="social-block facebook"><p class="title">{total}</p><p class="sub-title">Likes</p><div class="block"><span class="fa fa-facebook"></span></div></div></div>',
+		  enableHover: false,
+		  enableTracking: true,
+		  buttons: { facebook: {via: 'documentarytube'}},
+		  click: function(api, options){
+			api.simulateClick();
+			api.openPopup('facebook');
+		  }
+		});
+		$('#social-twitter-77185').sharrre({
+		  share: {
+			twitter: true
+		  },
+		  template: '<div class="social-block twitter"><p class="title">{total}</p><p class="sub-title">Tweets</p><div class="block"><span class="fa fa-twitter"></span></div></div></div>',
+		  enableHover: false,
+		  enableTracking: true,
+		  buttons: { twitter: {via: 'documentarytube'}},
+		  click: function(api, options){
+			api.simulateClick();
+			api.openPopup('twitter');
+		  }
+		});
+		$('#social-google-77185').sharrre({
+		  share: {
+			googlePlus: true
+		  },
+		  urlCurl: '/sharrre.php',
+		  template: '<div class="social-block google"><p class="title">{total}</p><p class="sub-title">Shares</p><div class="block"><span class="fa fa-google"></span></div></div></div>',
+		  enableHover: false,
+		  enableTracking: true,
+		  click: function(api, options){
+			api.simulateClick();
+			api.openPopup('googlePlus');
+		  }
+		});
+	
+
+
+          setTimeout(function() {
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
+           }, 0);
+
+            $(document).on('readyAgain', function() {
+                if (typeof twttr !== 'undefined') {
+                    twttr.widgets.load();
+                    twttr.events.bind('loaded', function(){
+                        sidebarHeightinator();
+                    });
+                }
+
+                function sidebarHeightinator(){
+                    if ( $('.new-sidebar').length > 0 && !$('.new-sidebar').is(':hidden')) {
+                    offset = $('.new-sidebar').offset().top;
+                    the_height = $('.new-sidebar').height() + 100 + offset;
+                    $('body').attr('style','min-height:'+the_height+'px;');
+                    }else{
+                        $('body').attr('style','min-height:100%;');
+                    }
+                }
+            });
+        
+
+		$('#social-facebook-58041').sharrre({
+		  share: {
+			facebook: true,
+		  },
+		  template: '<div class="social-block facebook"><p class="title">{total}</p><p class="sub-title">Likes</p><div class="block"><span class="fa fa-facebook"></span></div></div></div>',
+		  enableHover: false,
+		  enableTracking: true,
+		  buttons: { facebook: {via: 'documentarytube'}},
+		  click: function(api, options){
+			api.simulateClick();
+			api.openPopup('facebook');
+		  }
+		});
+		$('#social-twitter-58041').sharrre({
+		  share: {
+			twitter: true
+		  },
+		  template: '<div class="social-block twitter"><p class="title">{total}</p><p class="sub-title">Tweets</p><div class="block"><span class="fa fa-twitter"></span></div></div></div>',
+		  enableHover: false,
+		  enableTracking: true,
+		  buttons: { twitter: {via: 'documentarytube'}},
+		  click: function(api, options){
+			api.simulateClick();
+			api.openPopup('twitter');
+		  }
+		});
+		$('#social-google-58041').sharrre({
+		  share: {
+			googlePlus: true
+		  },
+		  urlCurl: '/sharrre.php',
+		  template: '<div class="social-block google"><p class="title">{total}</p><p class="sub-title">Shares</p><div class="block"><span class="fa fa-google"></span></div></div></div>',
+		  enableHover: false,
+		  enableTracking: true,
+		  click: function(api, options){
+			api.simulateClick();
+			api.openPopup('googlePlus');
+		  }
+		});
+	
+
+	tube_base = 'http://www.documentarytube.com/articles/top-7-books-that-changed-the-world';var app = app || {};app.baseUrl = tube_base;
+	$(document).ready( function($) {
+	    $('img.lazy').lazyload({effect : 'fadeIn',threshold : 2000}, function() { jQuery(window).scroll() });
+	    $('#newsList').newsTicker();
+	    if($('.auto-size').length){jQuery('.auto-size').autosize();}
+	    jQuery('.mobile-footer-nav').change(function(){window.location = $(this).find(':selected').val()});
+	    jQuery('.search-text-full').on('input', function(){if(jQuery('.search-text-full').val() != '') {jQuery('.search-close-full').fadeIn();} else {jQuery('.search-close-full').fadeOut();}});
+	});</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"cd28f149c4","applicationID":"7819217","transactionName":"ZwRRbBBSWEIEVkxfWl5OZkoLHF9fAVBAGEVYEQ==","queueTime":0,"applicationTime":149,"atts":"S0NSGlhIS0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>

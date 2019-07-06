@@ -1,0 +1,152 @@
+
+/* CSS Document */
+
+/* imported fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Acme');
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch|Reem+Kufi');
+@import url('https://fonts.googleapis.com/css?family=Hanalei+Fill');
+@import url('https://fonts.googleapis.com/css?family=Aclonica');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+
+/* css styling for header */
+*{
+	
+	margin: 0px;
+	padding: 0px;
+}
+
+.bodyBG{
+	background-image:url("../images/happy.jpg");
+	background-size: cover;
+	margin:0px;
+}
+/* css styling for navigation bar*/
+nav {
+    width:100%;
+	height: 75px;
+	background-color:#ABEAC3;
+	position:fixed;
+	top: 0px;
+	}
+/* logo styling*/
+.logo{
+	font-family: 'Hanalei Fill', cursive;
+	font-size: 35px;
+	font-weight: 350;
+	color:black;
+	text-decoration: none;
+	float: left;
+	padding: 15px 35px;
+}
+.homemargin{
+	margin-left: 140px;
+}
+/* styling for drop down navigation bar*/
+nav ul{
+	float: left;
+	
+	
+}
+nav ul li{
+	float: left;
+	list-style: none;
+	position: relative;
+	}
+
+nav ul li a{
+	display: block;
+	text-decoration: none;
+	padding: 20px 14px;
+	font-size: 25px;
+	font-weight: 500;
+	color:black;
+	font-family: 'Acme', sans-serif;
+}
+
+nav ul li ul{
+	display:none;
+	position: absolute;
+	padding: 12px;
+	border-radius: 0px 0px 5px 8px;
+	background-color:#ABEAC3;
+}
+nav ul li:hover ul {
+	display:block;	
+}
+nav ul li ul li{
+	width: 140px;
+	border-radius: 0px 0px 5px 8px;
+}
+
+nav ul li ul li a{
+	padding: 15px 14px;
+}
+
+nav ul li a:hover{
+	background-color:#2A8E51;
+}
+nav ul li a:focus{
+	
+	color:#B80A0D;
+}
+
+/* css styling for content */
+
+.text{
+	color:black;
+	margin-top: 400px;
+	text-align:right;
+	font-size: 30px;
+	font-weight: 900;
+	font-family: 'Aclonica', sans-serif;
+	
+}
+
+.Requsetlink{
+	color:black;
+	
+	font-family: 'Cabin Sketch', cursive;
+	line-height: 60px;
+	font-size: 40px;
+	padding: 10px;
+	margin-right: 390px;
+	margin-top: 60px;
+	
+	
+}
+
+div a:hover{
+	background-color:#2C7D3D;
+}
+
+/* css styling for footer */
+
+.footer{
+	background-color: black;
+	opacity: .7;
+	height: 200px;
+	margin-top:250px;
+	margin-right: 20px;
+	margin-left: 20px;
+	}
+
+.footertext{
+	padding-top:50px;
+	padding-left: 150px;
+	font-size: 25px;
+	color:#FFFFFF;
+	font-family: 'Noto Serif', serif;
+	}
+.footertext2{
+	text-decoration:none;
+	color:#FFFFFF;
+	background-color: #332F2F;
+}
+footer div a:focus{
+	background-color:#A01416;
+}
+.footerlogo{
+	text-decoration:none;
+	background-color: currentColor;
+}

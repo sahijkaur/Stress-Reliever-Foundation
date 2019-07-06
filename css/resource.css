@@ -1,0 +1,81 @@
+
+/* CSS Document */
+
+.resource{
+	border: thick #86C06F double;
+	background:#E5A384;
+	margin-top: 150px;
+	margin-right: 100px; 
+	margin-left: 610px;
+	padding: 30px;
+	color:#5E044A;
+
+
+}
+/* body background styling for resource  page*/
+.resourceBG{
+	background-image: url('../images/resoucess.jpg');
+	background-size: cover;
+	margin-top:0px;;
+	height: 100%;
+	position: relative;
+    background-repeat:no-repeat;
+}
+.padding{
+	padding: 20px;
+}
+/* body background styling for book html page*/
+.bookBG{
+	background-image: url('../images/blanket-bloom-blooming-545049.jpg');
+	background-size:100%;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+}
+
+/* provide margin to table which contains all pdf books*/
+
+.bookalignment{
+	margin-left: 900px;
+	padding: 30px;
+	margin-top: 70px;
+
+}
+td{
+	border: thick double #76E6A4;
+}
+/* heading style for h1 element of book html page*/
+.booksh1{
+	margin-top:220px;
+	margin-left: 330px;
+	color:#062F12;
+	font-size: 46px;
+	position: fixed;
+}
+
+.videoContent{
+	margin-top: 150px;
+	margin-left: 450px;
+	
+	
+}
+/* heading style for h3 element of video html page*/
+.videoh3
+{
+	float:left;
+	margin-top: 130px;
+	margin-left: 20px;
+	font-size: 20px;
+	font-weight: 600px;
+	color:#2A0D2E;
+}
+
+/* body background styling for video html  page*/
+.videoBG
+{
+	background-image:url("../images/videoBG.jpg");
+	background-size: cover;
+	margin-top:0px;;
+	height: 100%;
+	background-repeat: no-repeat;
+	
+}

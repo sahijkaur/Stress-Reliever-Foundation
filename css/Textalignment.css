@@ -1,0 +1,11 @@
+/* CSS Document */
+
+/* provide margin to every page using these properties*/
+div{
+	margin-top: 130px;
+	margin-left: 260px;
+	margin-right: 260px;
+}
+p,li,ul{
+	font-size: 23px;
+}
